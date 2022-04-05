@@ -1,4 +1,4 @@
-{% set version = "0.0.27" %}
+{% set version = "0.0.28" %}
 
 package:
   name: aeppl
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/a/aeppl/aeppl-{{ version }}.tar.gz
-  sha256: 94ef19bc817fd9f00922831bad18372966ca21cc7a1cd7dfd8df4d52d8a9da47
+  sha256: 60612006dcb1d803cacfbcf09ae8f41b9919dc5d2eb85669424442be1eed8733
   patches:
 
 build:
