@@ -146,5 +146,6 @@ Feedstock Maintainers
 =====================
 
 * [@brandonwillard](https://github.com/brandonwillard/)
+* [@ricardoV94](https://github.com/ricardoV94/)
 * [@twiecki](https://github.com/twiecki/)
 
