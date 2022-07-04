@@ -10,7 +10,7 @@ source:
   patches:
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
@@ -23,7 +23,7 @@ requirements:
     - python >=3.6
     - numpy >=1.18.1
     - scipy >=1.4.0
-    - aesara >=2.1.1
+    - aesara-base >=2.1.1
 
 test:
   imports:
