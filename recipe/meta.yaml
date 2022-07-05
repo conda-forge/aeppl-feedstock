@@ -1,7 +1,7 @@
 {% set version = "0.0.31" %}
 
 package:
-  name: aeppl
+  name: aeppl-suite
   version: {{ version }}
 
 source:
@@ -10,24 +10,55 @@ source:
   patches:
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
   noarch: python
 
-requirements:
-  host:
-    - pip
-    - python >=3.6
-    - setuptools
-  run:
-    - python >=3.6
-    - numpy >=1.18.1
-    - scipy >=1.4.0
-    - aesara >=2.1.1
+outputs:
+  - name: aeppl-base
+    build:
+      script:
+        - python -m pip install . --no-deps -vv
+    requirements:
+      host:
+        - pip
+        - python >=3.7
+      run:
+        - python >=3.7
+        - numpy >=1.18.1
+        - scipy >=1.4.0
+        - aesara-base >=2.3.2
+    test:
+      imports:
+        - aeppl
+      commands:
+        - pip check
+      requires:
+        - pip
 
-test:
-  imports:
-    - aeppl
+  - name: aeppl
+    requirements:
+      host:
+        - python >=3.7
+      run:
+        - python >=3.7
+        - {{ pin_subpackage('aeppl-base', exact=True) }}
+        # This last part with =*_1 is a temporary workaround since there are two
+        # builds for aesara-base v2.7.4 labeled like xyz_0 and abc_1.
+        # In the next version, we should remove this line and uncomment the subsequent
+        # lines.
+        - aesara ==2.7.4=*_1
+        # # As of Aesara v2.7.5, there is a 1-1 correspondence between the "aesara-base"
+        # # package and the "aesara" package of the same version and build number on
+        # # which it depends. Thus the pin from the "aesara-base" package above will
+        # # implicitly transfer here to the "aesara" package.
+        # - aesara >=2.7.5
+    test:
+      imports:
+        - aeppl
+      commands:
+        - pip check
+      requires:
+        - pip
 
 about:
   home: https://github.com/aesara-devs/aeppl

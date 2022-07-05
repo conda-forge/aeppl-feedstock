@@ -15,11 +15,44 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13561&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/aeppl-feedstock?branchName=main">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13561&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/aeppl-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13561&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/aeppl-feedstock?branchName=main&jobName=linux&configuration=linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13561&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/aeppl-feedstock?branchName=main&jobName=osx&configuration=osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13561&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/aeppl-feedstock?branchName=main&jobName=win&configuration=win_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
@@ -30,6 +63,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-aeppl-green.svg)](https://anaconda.org/conda-forge/aeppl) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/aeppl.svg)](https://anaconda.org/conda-forge/aeppl) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/aeppl.svg)](https://anaconda.org/conda-forge/aeppl) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/aeppl.svg)](https://anaconda.org/conda-forge/aeppl) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-aeppl--base-green.svg)](https://anaconda.org/conda-forge/aeppl-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/aeppl-base.svg)](https://anaconda.org/conda-forge/aeppl-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/aeppl-base.svg)](https://anaconda.org/conda-forge/aeppl-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/aeppl-base.svg)](https://anaconda.org/conda-forge/aeppl-base) |
 
 Installing aeppl
 ================
@@ -41,16 +75,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `aeppl` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `aeppl, aeppl-base` can be installed with `conda`:
 
 ```
-conda install aeppl
+conda install aeppl aeppl-base
 ```
 
 or with `mamba`:
 
 ```
-mamba install aeppl
+mamba install aeppl aeppl-base
 ```
 
 It is possible to list all of the versions of `aeppl` available on your platform with `conda`:
