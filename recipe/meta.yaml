@@ -10,12 +10,14 @@ source:
   patches:
 
 build:
-  number: 1
+  number: 2
+  # The following line seems to do nothing. Place noarch in the build block of individual outputs.
   noarch: python
 
 outputs:
   - name: aeppl-base
     build:
+      noarch: python
       script:
         - python -m pip install . --no-deps -vv
     requirements:
@@ -36,6 +38,8 @@ outputs:
         - pip
 
   - name: aeppl
+    build:
+      noarch: python
     requirements:
       host:
         - python >=3.7
