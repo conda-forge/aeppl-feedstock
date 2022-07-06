@@ -10,7 +10,7 @@ source:
   patches:
 
 build:
-  number: 1
+  number: 2
   # The following line seems to do nothing. Place noarch in the build block of individual outputs.
   noarch: python
 
