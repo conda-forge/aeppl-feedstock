@@ -10,7 +10,7 @@ source:
   patches:
 
 build:
-  number: 3
+  number: 4
   # The following line seems to do nothing. Place noarch in the build block of individual outputs.
   noarch: python
 
@@ -46,16 +46,11 @@ outputs:
       run:
         - python >=3.7
         - {{ pin_subpackage('aeppl-base', exact=True) }}
-        # This last part with =*_1 is a temporary workaround since there are two
-        # builds for aesara-base v2.7.4 labeled like xyz_0 and abc_1.
-        # In the next version, we should remove this line and uncomment the subsequent
-        # lines.
-        - aesara ==2.7.4=*_2
-        # # As of Aesara v2.7.5, there is a 1-1 correspondence between the "aesara-base"
-        # # package and the "aesara" package of the same version and build number on
-        # # which it depends. Thus the pin from the "aesara-base" package above will
-        # # implicitly transfer here to the "aesara" package.
-        # - aesara >=2.7.5
+        # As of Aesara v2.7.5, there is a 1-1 correspondence between the "aesara-base"
+        # package and the "aesara" package of the same version and build number on
+        # which it depends. Thus the pin from the "aesara-base" package above will
+        # implicitly transfer here to the "aesara" package.
+        - aesara >=2.7.5
     test:
       imports:
         - aeppl
