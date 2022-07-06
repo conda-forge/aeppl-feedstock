@@ -16,6 +16,7 @@ build:
 outputs:
   - name: aeppl-base
     build:
+      noarch: python
       script:
         - python -m pip install . --no-deps -vv
     requirements:
@@ -36,6 +37,8 @@ outputs:
         - pip
 
   - name: aeppl
+    build:
+      noarch: python
     requirements:
       host:
         - python >=3.7
