@@ -1,4 +1,4 @@
-{% set version = "0.0.31" %}
+{% set version = "0.0.32" %}
 
 package:
   name: aeppl-suite
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/a/aeppl/aeppl-{{ version }}.tar.gz
-  sha256: cd492f3b77c79adb9932651fbd3d71a93ed126118dc9203caf20effb82ae3cef
+  sha256: 2730542eaa5e3a10335c8b4f048b379ee1283c7ee03b9ab234268363eed3307d
   patches:
 
 build:
-  number: 4
+  number: 0
   # The following line seems to do nothing. Place noarch in the build block of individual outputs.
   noarch: python
 
