@@ -1,4 +1,4 @@
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: aeppl-suite
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/a/aeppl/aeppl-{{ version }}.tar.gz
-  sha256: 20c60e0f1b123dbff5c7779de5253b8351fa06a1bbd5ba7363d83d4c336f9fa7
+  sha256: 91c316598b1140dc917be637591de9129d4687c541790f12781a8ae290b0281f
   patches:
 
 build:
@@ -29,6 +29,7 @@ outputs:
         - numpy >=1.18.1
         - scipy >=1.4.0
         - aesara-base >=2.8.8
+        - typing-extensions
     test:
       imports:
         - aeppl
