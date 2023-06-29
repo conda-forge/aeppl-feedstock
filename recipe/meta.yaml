@@ -23,12 +23,12 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.7
+        - python >=3.8
       run:
-        - python >=3.7
+        - python >=3.8
         - numpy >=1.18.1
         - scipy >=1.4.0
-        - aesara-base >=2.8.11
+        - aesara-base >=2.8.13
         - typing-extensions
     test:
       imports:
@@ -43,9 +43,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
       run:
-        - python >=3.7
+        - python >=3.8
         - {{ pin_subpackage('aeppl-base', exact=True) }}
         # As of Aesara v2.7.5, there is a 1-1 correspondence between the "aesara-base"
         # package and the "aesara" package of the same version and build number on
