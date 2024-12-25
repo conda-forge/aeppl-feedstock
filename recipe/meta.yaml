@@ -5,12 +5,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/a/aeppl/aeppl-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/a/aeppl/aeppl-{{ version }}.tar.gz
   sha256: 2bb70c0aff40cd1f90a750bd53239ce12d9cc97cd0826987ad8581c329a41001
   patches:
 
 build:
-  number: 0
+  number: 1
   # The following line seems to do nothing. Place noarch in the build block of individual outputs.
   noarch: python
 
@@ -23,9 +23,9 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.8
+        - python {{ python_min }}
       run:
-        - python >=3.8
+        - python >={{ python_min }}
         - numpy >=1.18.1
         - scipy >=1.4.0
         - aesara-base >=2.8.13
@@ -43,9 +43,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
       run:
-        - python >=3.8
+        - python >={{ python_min }}
         - {{ pin_subpackage('aeppl-base', exact=True) }}
         # As of Aesara v2.7.5, there is a 1-1 correspondence between the "aesara-base"
         # package and the "aesara" package of the same version and build number on
@@ -59,6 +59,7 @@ outputs:
         - pip check
       requires:
         - pip
+        - python {{ python_min }}
 
 about:
   home: https://github.com/aesara-devs/aeppl
